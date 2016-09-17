@@ -1,0 +1,5 @@
+rtctimer.h(55): Warning! W106: Constant out of range - truncated
+rtctimer.h(55): Note! I2003: source conversion type is 'long '
+rtctimer.h(55): Note! I2004: target conversion type is 'int '
+TEST.C(23): Warning! W107: Missing return value for function 'main'
+TEST.C(23): Warning! W138: No newline at end of file

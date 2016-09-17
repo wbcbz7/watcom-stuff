@@ -1,0 +1,4 @@
+FDTUNNEL.C(5): Warning! W101: Non-portable pointer conversion
+FDTUNNEL.C(5): Note! I2003: source conversion type is 'int '
+FDTUNNEL.C(5): Note! I2004: target conversion type is 'unsigned char *'
+FDTUNNEL.C(474): Warning! W107: Missing return value for function 'main'

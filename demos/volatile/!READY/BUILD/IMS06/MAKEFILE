@@ -1,0 +1,18 @@
+targets = ims.mak binfile.mak test.mak
+
+.silent
+
+all: .symbolic
+  for %i in ($(targets)) do wmake -h -f %i
+
+test: .symbolic
+  wmake -h -f test.mak
+
+cleantest: .symbolic
+  wmake -h -f test.mak cleanall
+
+clean: .symbolic
+  for %i in ($(targets)) do wmake -h -f %i clean
+
+cleanall: .symbolic
+  for %i in ($(targets)) do wmake -h -f %i cleanall

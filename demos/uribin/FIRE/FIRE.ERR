@@ -1,0 +1,3 @@
+FIRE.C(148): Warning! W131: No prototype found for function 'memset'
+FIRE.C(210): Warning! W131: No prototype found for function 'memcpy'
+FIRE.C(231): Warning! W107: Missing return value for function 'main'

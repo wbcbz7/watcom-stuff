@@ -1,0 +1,148 @@
+ v o l a t i l e :: b - s t a t e + l i g h t   f u t u r e :: 0 x 7 e 0
+
+ fcking msdos demo
+ planned for assembly16, but.... :(
+
+ so here it is - cc16 wild compo (yep, it is TOO wild for regular pc compo :D)
+
+ wbcbz7 ->codemusicphotos
+ nodeus ->gfx
+
+ p200mmx++\32mb\vesa1.2. celeron300a\vesa2.0 is better.
+
+ [320x200 15bpp 60hz]
+
+ some additional modes (like 320x240\640x480 or 16bpp modes) are available but
+ please, use it only if you have got troubles.
+ and sorry for no vga fakemode\grayscale support - there is no time left :(
+ 
+ sometimes banked modes did not work properly. get univbe
+
+ should work in dosbox but by unknown reason sometimes it doesn't work with gus
+ set as many cycles as you can :)
+
+ additional kkommand line keys:
+   noretrace   - disable retrace sync
+   forcebanked - force banked vesa modes if lfb also supported
+   slowtimer   - use slow timer mode
+                 if demo hangs but music is still played try this
+
+
+ other legal stuff:
+ 
+ indoor music system 0.6 by pascal\cubic
+ pmode\w by tran and daredevil
+
+ unfortunaly final version won't be released. but i can release source code :)
+
+ sometimes sountrack sounds like muffler modules. indeed. sorry.
+ we just love haujobb so much :)
+
+ and we also love
+   .tbk4d.consciousness.tekknolab.desire.hornet.(b)yterapers.ivorylabs.rift.
+    .demarche.fishbone.orzomasteam.sibkkrew.not-soft.bon^2.trsi.lifeonmars.
+ .skrju.thesuper.quite.z_brothers.t-rex.sands.gemba.quadtrip.peisik.mercury.
+ and personal:
+ .diver4d.psndcj.sq.g0blinish.vbi.ts-labs.brightentayle.denisgrachev.denpopov.
+ .introspec.kowalski.n1k-o.breeze.random.robus.blackcat.xlat.maddev.blastoff.
+  .mmcm.factor6.c-jeff.fatalsnipe.key-jee.nyuk.gasman.scalesmann.kakos-nonos.
+
+  .branch.mikron.roz.sensenstahl.hellmood.optimus.visy.frag.phoenix.trixter.
+     .po1.jmph.orbitaldecay.las.cupe.viler.whizart.scali.vogonsorg_stuff.
+   
+ and you :)
+
+ --wbcbz7 zb.o8.0x7e0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop
+ nop nop nop nop nop nop nop nop nop nop nop nop nop nop nep nop nop nop nop
+ nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop
+ nop nop nop nop nop nep nop nop nop nop nop nop nop nop nop nop nop nop nop
+ nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop
+ nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop
+ nop nep nop nop nop nop nop nop nop nop nop nop nop nep nop nop nop nop nop
+ nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ there is an unused gfx with some stuff. find it :)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ короче, посоны, увидимся в Новосибирске :)

@@ -1,0 +1,4 @@
+name rblur
+file {rblur.obj main.obj matrix.obj}
+library {..\flexptc\flexptc.lib}
+system pmodew

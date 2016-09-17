@@ -1,0 +1,31 @@
+
+TARGET   = test
+
+O        = obj
+C        = cpp
+
+CC       = wpp386.exe
+LD       = wlink.exe
+CFLAGS   = -fp5 -zp16 -oneatx -s
+LFLAGS   =
+
+OBJS     = $(TARGET).$(O)
+OBJSTR   = file {$(OBJS)}
+
+LIBS     = flexptc.lib
+LIBSTR   = library {$(LIBS)}
+
+all: $(TARGET).exe
+
+$(TARGET).exe: $(OBJS) .symbolic
+	$(LD) name $(TARGET) $(OBJSTR) $(LIBSTR) system dos4g $(LFLAGS)
+
+$(TARGET).$(O) : $(TARGET).$(C)
+	$(CC) $< $(CFLAGS)
+	
+	
+# clean all
+clean: .symbolic
+	del *.$(O)
+	del *.exe
+	del *.err

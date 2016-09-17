@@ -1,0 +1,2 @@
+rtctimer.h(94): Warning! W138: No newline at end of file
+BUMP.C(219): Warning! W131: No prototype found for function 'memcpy'

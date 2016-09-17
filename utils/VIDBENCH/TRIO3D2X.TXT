@@ -1,0 +1,76 @@
+-------------------------------- 
+video adapter type: VESA, version 2.0 
+VESA OEM string:    S3 Incorporated. 86C362 
+VESA adapter name:  Trio3D/2X 
+-----------------------------------------------------------------------
+results for VGA mode 0x13 (320x200x8bpp), 4096 KiB trasfer: 
+
+8-bit  write:     12.783 MB/s  -  12.190 MiB/s  -  199.73 fps
+8-bit   read:      1.858 MB/s  -   1.771 MiB/s  -   29.02 fps
+8-bit   move:     12.783 MB/s  -  12.190 MiB/s  -  199.73 fps
+
+16-bit write:     33.293 MB/s  -  31.751 MiB/s  -  520.21 fps
+16-bit  read:      3.715 MB/s  -   3.543 MiB/s  -   58.05 fps
+16-bit  move:     33.037 MB/s  -  31.507 MiB/s  -  516.21 fps
+
+32-bit write:     81.036 MB/s  -  77.282 MiB/s  - 1266.19 fps
+32-bit  read:      4.598 MB/s  -   4.385 MiB/s  -   71.84 fps
+32-bit  move:     79.536 MB/s  -  75.852 MiB/s  - 1242.75 fps
+
+-------------------------------- 
+video adapter type: VESA, version 2.0 
+VESA OEM string:    S3 Incorporated. 86C362 
+VESA adapter name:  Trio3D/2X 
+-----------------------------------------------------------------------
+results for VGA mode-x 0x13 (320x200x8bpp), 4096 KiB trasfer: 
+
+8-bit  write:     12.783 MB/s  -  12.190 MiB/s  -  199.73 fps
+8-bit   read:      1.863 MB/s  -   1.776 MiB/s  -   29.10 fps
+8-bit   move:     12.783 MB/s  -  12.190 MiB/s  -  199.73 fps
+
+16-bit write:     33.037 MB/s  -  31.507 MiB/s  -  516.21 fps
+16-bit  read:      2.301 MB/s  -   2.194 MiB/s  -   35.95 fps
+16-bit  move:     33.037 MB/s  -  31.507 MiB/s  -  516.21 fps
+
+32-bit write:     40.518 MB/s  -  38.641 MiB/s  -  633.09 fps
+32-bit  read:      2.540 MB/s  -   2.422 MiB/s  -   39.68 fps
+32-bit  move:     40.518 MB/s  -  38.641 MiB/s  -  633.09 fps
+
+-------------------------------- 
+video adapter type: VESA, version 2.0 
+VESA OEM string:    S3 Incorporated. 86C362 
+VESA adapter name:  Trio3D/2X 
+-----------------------------------------------------------------------
+results for VESA mode 0x101 (640x480x8bpp), 4096 KiB trasfer: 
+
+8-bit  write:     12.707 MB/s  -  12.118 MiB/s  -   41.36 fps
+8-bit   read:      1.769 MB/s  -   1.688 MiB/s  -    5.76 fps
+8-bit   move:     12.707 MB/s  -  12.118 MiB/s  -   41.36 fps
+
+16-bit write:     32.785 MB/s  -  31.267 MiB/s  -  106.72 fps
+16-bit  read:      3.540 MB/s  -   3.376 MiB/s  -   11.52 fps
+16-bit  move:     32.785 MB/s  -  31.267 MiB/s  -  106.72 fps
+
+32-bit write:    107.374 MB/s  - 102.399 MiB/s  -  349.52 fps
+32-bit  read:      7.087 MB/s  -   6.759 MiB/s  -   23.07 fps
+32-bit  move:     89.478 MB/s  -  85.333 MiB/s  -  291.27 fps
+
+-------------------------------- 
+video adapter type: VESA, version 2.0 
+VESA OEM string:    S3 Incorporated. 86C362 
+VESA adapter name:  Trio3D/2X 
+-----------------------------------------------------------------------
+results for VESA mode 0x101 (640x480x8bpp) LFB, 4096 KiB trasfer: 
+
+8-bit  write:     12.707 MB/s  -  12.118 MiB/s  -   41.36 fps
+8-bit   read:      1.892 MB/s  -   1.805 MiB/s  -    6.16 fps
+8-bit   move:     12.707 MB/s  -  12.118 MiB/s  -   41.36 fps
+
+16-bit write:     32.785 MB/s  -  31.267 MiB/s  -  106.72 fps
+16-bit  read:      3.787 MB/s  -   3.611 MiB/s  -   12.33 fps
+16-bit  move:     32.538 MB/s  -  31.030 MiB/s  -  105.92 fps
+
+32-bit write:    110.127 MB/s  - 105.025 MiB/s  -  358.49 fps
+32-bit  read:      7.561 MB/s  -   7.211 MiB/s  -   24.61 fps
+32-bit  move:     89.478 MB/s  -  85.333 MiB/s  -  291.27 fps
+

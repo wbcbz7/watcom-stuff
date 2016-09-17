@@ -1,0 +1,7 @@
+                   0          0  t_memcpy
+                 451          1  t_repmovsd
+                 457          1  t_iunroll
+                 483          1  t_iunroll2
+                1569          1  t_fpu
+                   0          0  main
+                4165          1  t_memcpy

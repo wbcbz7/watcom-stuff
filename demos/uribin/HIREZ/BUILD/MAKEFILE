@@ -1,0 +1,29 @@
+
+TARGET   = uribin
+
+CC       = wpp386.exe
+LD       = wlink.exe
+CFLAGS   = -fp5 -fpi87 -zp16 -oneatx -s
+LFLAGS   =
+
+LIBS     = ims06\ims.lib ims06\binfile.lib
+LIBSTR   = library {$(LIBS)}
+
+OBJS     = $(TARGET).obj
+OBJSTR   = file {$(OBJS)}
+
+all: $(TARGET).exe
+
+$(TARGET).exe: $(OBJS) .symbolic
+	$(LD) name $(TARGET) file {$(OBJS)} $(LIBSTR) system pmode $(LFLAGS)
+	$(TARGET).exe
+
+$(TARGET).obj : $(TARGET).cpp
+	$(CC) $< $(CFLAGS)
+	
+	
+# clean all
+clean: .symbolic
+	del *.obj
+	del *.exe
+	del *.err

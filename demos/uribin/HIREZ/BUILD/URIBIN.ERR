@@ -1,0 +1,20 @@
+parts\wf2\wf2.c(16): Warning! W086: col(18) definition of macro 'stardist' not identical to previous definition
+parts\wf2\wf2.c(16): Note! N393: col(18) included from uribin.cpp(45)
+parts\wf2\wf2.c(16): Note! N851: col(18) macro 'stardist' defined in: parts\wf1\wf1.c(17) (col 9)
+parts\wf2\wf2.c(29): Warning! W086: col(50) definition of macro 'nodes' not identical to previous definition
+parts\wf2\wf2.c(29): Note! N851: col(50) macro 'nodes' defined in: parts\wf1\wf1.c(30) (col 9)
+parts\wf2\wf2.c(34): Warning! W086: col(22) definition of macro 'lines' not identical to previous definition
+parts\wf2\wf2.c(34): Note! N851: col(22) macro 'lines' defined in: parts\wf1\wf1.c(35) (col 9)
+parts\flat1\flat1.c(18): Warning! W086: col(18) definition of macro 'stardist' not identical to previous definition
+parts\flat1\flat1.c(18): Note! N851: col(18) macro 'stardist' defined in: parts\wf2\wf2.c(16) (col 9)
+parts\flat1\flat1.c(30): Warning! W086: col(31) definition of macro 'nodes' not identical to previous definition
+parts\flat1\flat1.c(30): Note! N851: col(31) macro 'nodes' defined in: parts\wf2\wf2.c(29) (col 10)
+parts\wf3\wf3.c(16): Warning! W086: col(18) definition of macro 'stardist' not identical to previous definition
+parts\wf3\wf3.c(16): Note! N851: col(18) macro 'stardist' defined in: parts\flat1\flat1.c(18) (col 9)
+parts\wf3\wf3.c(27): Warning! W086: col(23) definition of macro 'nodes' not identical to previous definition
+parts\wf3\wf3.c(27): Note! N851: col(23) macro 'nodes' defined in: parts\flat1\flat1.c(30) (col 10)
+parts\wf4\wf4.c(28): Warning! W086: col(25) definition of macro 'nodes' not identical to previous definition
+parts\wf4\wf4.c(28): Note! N851: col(25) macro 'nodes' defined in: parts\wf3\wf3.c(27) (col 10)
+parts\flare1\flare1.c(24): Warning! W086: col(18) definition of macro 'SPR_SIZE' not identical to previous definition
+parts\flare1\flare1.c(24): Note! N851: col(18) macro 'SPR_SIZE' defined in: parts\wf1\wf1.c(38) (col 9)
+parts\wf1\wf1.c(549): Error! E094: col(0) ***FATAL*** Program interrupted from keyboard

@@ -1,0 +1,46 @@
+# Makefile for the USM player ( WATCOM C Version )
+# It can be use by borland make.exe and watcom wmake.exe
+#
+# (c) 1996 FreddyV/Useless
+
+TARGET = blash.exe
+
+# USM play lib file
+LIB   = usmppmw.lib
+#LIB   = ..\LIB\usmpd4g.lib
+
+# USM play include files directory
+INC   = .
+
+# WATCOM C include directory
+CINC  = ..\..\WATCOM\H
+
+# PMODE/W or DOS/4GW Extender (Change also the ASMPARAM section)
+SYSTEM = pmodew
+#SYSTEM = dos4g
+
+#-----------------------------------------------------------------------------
+
+# C compiler parameters
+# ---------------------
+#
+
+CPARAM   = -i=$(CINC) -i=$(INC)
+
+ASM      = TASM $(ASMPARAM)
+C        = WCC386
+LINK     = WLINK
+
+OBJLIST  = blash.obj parts\greets.obj
+
+OPT      = -zp16 -fp5 -ox
+
+#
+#                       ** Files link **
+#
+
+$(TARGET)   : $(OBJLIST)
+              $(LINK) @WATCOM.LNK file blash file $(LIB) system $(SYSTEM) name $(TARGET)
+
+blash.obj   : blash.c $(INC)\usmplay.h
+              $(C) $(CPARAM) blash.c $(OPT)

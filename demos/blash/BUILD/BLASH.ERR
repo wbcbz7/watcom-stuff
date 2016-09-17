@@ -1,0 +1,16 @@
+usmplay.h(163): Warning! W138: No newline at end of file
+blash.c(24): Warning! W101: Non-portable pointer conversion
+blash.c(24): Note! I2003: source conversion type is 'int '
+blash.c(24): Note! I2004: target conversion type is 'unsigned char *'
+blash.c(59): Warning! W131: No prototype found for function 'setvidmode'
+blash.c(62): Warning! W131: No prototype found for function 'hp_main'
+blash.c(66): Warning! W131: No prototype found for function 'w1_main'
+parts\\tunnel.c(138): Warning! W131: No prototype found for function 'memcpy'
+parts\\3dstuff.c(263): Warning! W138: No newline at end of file
+parts\\3dstuff2.c(206): Warning! W131: No prototype found for function 'close'
+parts\\3dstuff2.c(265): Warning! W138: No newline at end of file
+parts\\slime.c(54): Warning! W107: Missing return value for function 'hp_main'
+blash.c(231): Warning! W131: No prototype found for function 'strcmp'
+blash.c(231): Warning! W131: No prototype found for function 'strupr'
+blash.c(272): Warning! W131: No prototype found for function 'strchr'
+blash.c(343): Warning! W107: Missing return value for function 'main'

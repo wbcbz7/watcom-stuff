@@ -1,0 +1,186 @@
+#include <stdlib.h>
+#include <conio.h>
+#include <math.h>
+
+#define pi        3.141592653589793
+#define sat(a, l) ((a > l) ? l : a)
+
+unsigned char  *screen = (unsigned char*)0xA0000;
+
+unsigned char  buffer1[64000], buffer2[64000];
+unsigned char  *pbuf1 = (unsigned char*)&buffer1, *pbuf2 = (unsigned char*)&buffer2, *pbuf3;
+
+         float sintab[65536], costab[65536];
+
+void drop(int x, int y) {
+    int ptr;
+    
+    ptr = (y << 8) + (y << 6) + x;
+    pbuf1[ptr] = 255;
+}
+
+void buildSinTable() {
+    int i, j;
+    float r;
+    
+    for (i = 0; i < 65536; i++) {
+        r = (sin(2 * pi * i / 65536));
+        sintab[i] = r;
+        r = (cos(2 * pi * i / 65536));
+        costab[i] = r;
+    }
+}
+
+// 8-pixel version
+/*
+void water();
+#pragma aux water = " mov   esi, pbuf1       " \
+                    " mov   edi, pbuf2       " \
+                    " add   esi, 321         " \
+                    " add   edi, 321         " \
+                    " mov   ecx, 64000-642   " \
+                    " xor   eax, eax         " \
+                    " xor   ebx, ebx         " \
+                    " @inner:                " \
+                    " mov   al,  [esi - 320] " \
+                    " mov   bl,  [esi + 320] " \
+                    " add   eax, ebx         " \
+                    " mov   bl,  [esi - 1]   " \
+                    " add   eax, ebx         " \
+                    " mov   bl,  [esi + 1]   " \
+                    " add   eax, ebx         " \
+                    " mov   bl,  [esi - 319] " \
+                    " add   eax, ebx         " \
+                    " mov   bl,  [esi + 319] " \
+                    " add   eax, ebx         " \
+                    " mov   bl,  [esi - 321] " \
+                    " add   eax, ebx         " \
+                    " mov   bl,  [esi + 321] " \
+                    " add   eax, ebx         " \
+                    " shr   eax, 2           " \
+                    " mov   bl,  [edi]       " \
+                    " sub   eax, ebx         " \
+                    " jnc   @skip            " \
+                    " xor   eax, eax         " \
+                    " @skip:                 " \
+                    " mov   [edi], al        " \
+                    " inc   esi              " \
+                    " inc   edi              " \
+                    " dec   ecx              " \
+                    " jnz   @inner           " \
+                    modify [esi edi eax ebx ecx];
+
+*/
+void water();
+#pragma aux water = " mov   esi, pbuf1       " \
+                    " mov   edi, pbuf2       " \
+                    " add   esi, 321         " \
+                    " add   edi, 321         " \
+                    " mov   ecx, 64000-642   " \
+                    " xor   eax, eax         " \
+                    " xor   ebx, ebx         " \
+                    " @inner:                " \
+                    " mov   al,  [esi - 320] " \
+                    " mov   bl,  [esi + 320] " \
+                    " add   eax, ebx         " \
+                    " mov   bl,  [esi - 1]   " \
+                    " add   eax, ebx         " \
+                    " mov   bl,  [esi + 1]   " \
+                    " add   eax, ebx         " \
+                    " shr   eax, 1           " \
+                    " mov   bl,  [edi]       " \
+                    " sub   eax, ebx         " \
+                    " jnc   @skip            " \
+                    " xor   eax, eax         " \
+                    " @skip:                 " \
+                    " mov   [edi], al        " \
+                    " inc   esi              " \
+                    " inc   edi              " \
+                    " dec   ecx              " \
+                    " jnz   @inner           " \
+                    modify [esi edi eax ebx ecx];
+
+/*
+void water() {
+    int i, j, k;
+    
+    for (i = 320; i < (64000-320); i++) {
+        
+        k = (pbuf1[i - 1] + pbuf1[i + 1] + pbuf1[i-320] + pbuf1[i+320]) >> 1;
+        k -= pbuf2[i]; if (k < 0) k = 0;
+        pbuf2[i] = k;        
+    }
+}
+*/
+
+int main() {
+    int i, j, p = 0;   
+
+    buildSinTable();
+    
+    _asm {
+        mov  ax, 13h
+        int  10h
+
+        mov dx,3d4h   // remove protection
+        mov al,11h
+        out dx,al
+        inc dl
+        in  al,dx
+        and al,7fh
+        out dx,al
+
+        mov dx,3c2h   // misc output
+        mov al,0e3h   // clock
+        out dx,al
+
+        mov dx,3d4h
+        mov ax,00B06h // Vertical Total
+        out dx,ax
+        mov ax,03E07h // Overflow
+        out dx,ax
+        mov ax,0C310h // Vertical start retrace
+        out dx,ax
+        mov ax,08C11h // Vertical end retrace
+        out dx,ax
+        mov ax,08F12h // Vertical display enable end
+        out dx,ax
+        mov ax,09015h // Vertical blank start
+        out dx,ax
+        mov ax,00B16h // Vertical blank end
+        out dx,ax
+    }
+    
+    outp(0x3C8, 0);
+    for (i = 0; i < 256; i++) {
+        outp(0x3C9, sat(8  + ((i >> 4) + (i >> 4)), 63));
+        outp(0x3C9, sat(12 + ((i >> 3) + (i >> 4)), 63));
+        outp(0x3C9, sat(24 + ((i >> 2) + (i >> 3)), 63));  
+    }
+
+    while (!kbhit()) {} getch();
+    
+    while (!kbhit()) {
+        i++; 
+        
+        while ((inp(0x3DA) & 8) == 8) {}
+        while ((inp(0x3DA) & 8) != 8) {}
+
+        outp(0x3C8, 0); outp(0x3C9, 63); outp(0x3C9, 0); outp(0x3C9, 0);
+        memcpy(screen, pbuf2, 64000);    
+        outp(0x3C8, 0); outp(0x3C9, 63); outp(0x3C9, 63); outp(0x3C9, 0);
+        if (pbuf1 == &buffer1) drop((rand() % 318) + 1, (rand() % 198) + 1);
+        drop(160 + 130 * sintab[(i << 8) & 0xFFFF], 100 + 80 * sintab[(i << 9) & 0xFFFF]);
+        drop(160 + 130 * costab[(i << 7) & 0xFFFF], 100 + 80 * sintab[(i << 8) & 0xFFFF]);
+        water();
+        outp(0x3C8, 0); outp(0x3C9, 8); outp(0x3C9, 12); outp(0x3C9, 24); 
+        
+        pbuf3 = pbuf1; pbuf1 = pbuf2; pbuf2 = pbuf3;
+    }
+    getch();
+
+    _asm {
+        mov  ax, 3
+        int  10h
+    }
+}

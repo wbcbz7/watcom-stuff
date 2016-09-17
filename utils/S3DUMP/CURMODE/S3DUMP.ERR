@@ -1,0 +1,3 @@
+S3DUMP.C(23): Warning! W131: No prototype found for function 'sound'
+S3DUMP.C(23): Warning! W131: No prototype found for function 'delay'
+S3DUMP.C(23): Warning! W131: No prototype found for function 'nosound'

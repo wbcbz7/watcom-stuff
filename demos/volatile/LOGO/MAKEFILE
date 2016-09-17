@@ -1,0 +1,41 @@
+
+TARGET   = logo
+
+O        = obj
+C        = cpp
+
+CC       = wpp386.exe
+LD       = wlink.exe
+CFLAGS   = -fp5 -fpi87 -zp16 -oneatx -s
+LFLAGS   =
+
+LIBS     = ..\flexptc\flexptc.lib
+LIBSTR   = library {$(LIBS)}
+
+OBJS     = $(TARGET).$(O) main.$(O)
+OBJSTR   = file {$(OBJS)}
+
+SYSTEM   = pmodew
+
+all: $(TARGET).exe
+
+$(TARGET).exe: $(OBJS) .symbolic
+    %write $(TARGET).lnk name $(TARGET)
+	%write $(TARGET).lnk $(OBJSTR) 
+	%write $(TARGET).lnk $(LIBSTR) 
+	%write $(TARGET).lnk system $(SYSTEM)
+	$(LD) @$(TARGET).lnk $(LFLAGS)
+	del $(TARGET).lnk
+
+$(TARGET).$(O) : $(TARGET).$(C) $(TARGET).h
+	$(CC) $(TARGET).$(C) $(CFLAGS)
+
+main.$(O) : main.$(C) $(TARGET).h
+	$(CC) main.$(C) $(CFLAGS)
+	
+	
+# clean all
+clean: .symbolic
+	del *.$(O)
+	del *.exe
+	del *.err

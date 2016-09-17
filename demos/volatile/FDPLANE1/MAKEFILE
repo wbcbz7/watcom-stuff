@@ -1,0 +1,39 @@
+
+TARGET   = fdplanes
+
+O        = obj
+C        = cpp
+
+CC       = wpp386.exe
+LD       = wlink.exe
+CFLAGS   = -fp5 -fpi87 -zp16 -oneatx -s
+LFLAGS   =
+
+LIBS     = ..\flexptc\flexptc.lib
+LIBSTR   = library {$(LIBS)}
+
+OBJS     = $(TARGET).$(O) main.$(O) tmap.$(O)
+OBJSTR   = file {$(OBJS)}
+
+SYSTEM   = pmodew
+
+all: $(TARGET).exe
+
+$(TARGET).exe: $(OBJS) .symbolic
+	$(LD) name $(TARGET) $(OBJSTR) $(LIBSTR) system $(SYSTEM) $(LFLAGS)
+
+$(TARGET).$(O) : $(TARGET).$(C) $(TARGET).h
+	$(CC) $(TARGET).$(C) $(CFLAGS)
+
+tmap.$(O) : tmap.$(C) tmap.h
+	$(CC) tmap.$(C) $(CFLAGS)
+	
+main.$(O) : main.$(C)
+	$(CC) $< $(CFLAGS)
+	
+	
+# clean all
+clean: .symbolic
+	del *.$(O)
+	del *.exe
+	del *.err

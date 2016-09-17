@@ -1,0 +1,28 @@
+
+TARGET   = flexptc
+
+O        = obj
+C        = cpp
+
+CC       = wpp386.exe
+LD       = wlink.exe
+CFLAGS   = -fp5 -zp16 -oneatx -s
+LFLAGS   =
+
+OBJS     = $(TARGET).$(O)
+OBJSTR   = file {$(OBJS)}
+
+all: $(TARGET).lib
+
+$(TARGET).lib: $(OBJS) .symbolic
+	wlib.exe -n $(TARGET).lib +$(TARGET).$(O)
+
+$(TARGET).$(O) : $(TARGET).$(C)
+	$(CC) $< $(CFLAGS)
+	
+	
+# clean all
+clean: .symbolic
+	del *.$(O)
+	del *.obj
+	del *.err

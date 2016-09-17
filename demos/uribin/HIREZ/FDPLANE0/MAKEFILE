@@ -1,0 +1,28 @@
+
+TARGET   = fdplanes.exe
+
+CC       = wcc386.exe
+LD       = wlink.exe
+CFLAGS   = -fp5 -zp16 -oneatx -s
+LFLAGS   =
+
+# LIBS     = ..\..\etc\libpng\libpng.lib
+# LIBSTR   = library {$(LIBS)}
+
+OBJS     = fdplanes.obj
+OBJSTR   = file {$(OBJS)}
+
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(LD) name $(TARGET) file {$(OBJS)} $(LIBSTR) system pmode $(LFLAGS)
+
+fdplanes.obj : fdplanes.c
+	$(CC) $< $(CFLAGS)
+	
+	
+# clean all
+clean: .symbolic
+	del *.obj
+	del *.exe
+	del *.err

@@ -1,0 +1,148 @@
+here is my results from S3 Trio64V2/DX w/ BIOS v.2.01.14:
+
+adapter type: VESA, version 2.0 
+VESA OEM string: S3 Incorporated. 86C775/86C785 
+-----------------------------------------------------------------------
+results for VGA mode 0x13 (320x200x8bpp), 4096 KiB trasfer: 
+
+8-bit  write:     10.201 MB/s  -   9.729 MiB/s  -  159.39 fps
+8-bit   read:      1.674 MB/s  -   1.597 MiB/s  -   26.16 fps
+8-bit   move:     10.201 MB/s  -   9.729 MiB/s  -  159.39 fps
+
+16-bit write:     26.189 MB/s  -  24.976 MiB/s  -  409.20 fps
+16-bit  read:      3.350 MB/s  -   3.194 MiB/s  -   52.34 fps
+16-bit  move:     26.189 MB/s  -  24.976 MiB/s  -  409.20 fps
+
+32-bit write:     43.826 MB/s  -  41.796 MiB/s  -  684.78 fps
+32-bit  read:      4.324 MB/s  -   4.124 MiB/s  -   67.57 fps
+32-bit  move:     43.826 MB/s  -  41.796 MiB/s  -  684.78 fps
+
+-------------------------------- 
+adapter type: VESA, version 2.0 
+VESA OEM string: S3 Incorporated. 86C775/86C785 
+-----------------------------------------------------------------------
+results for VGA mode-x 0x13 (320x200x8bpp), 4096 KiB trasfer: 
+
+8-bit  write:     10.201 MB/s  -   9.729 MiB/s  -  159.39 fps
+8-bit   read:      1.687 MB/s  -   1.608 MiB/s  -   26.35 fps
+8-bit   move:     10.201 MB/s  -   9.729 MiB/s  -  159.39 fps
+
+16-bit write:     22.025 MB/s  -  21.005 MiB/s  -  344.14 fps
+16-bit  read:      2.169 MB/s  -   2.068 MiB/s  -   33.89 fps
+16-bit  move:     22.025 MB/s  -  21.005 MiB/s  -  344.14 fps
+
+32-bit write:     22.025 MB/s  -  21.005 MiB/s  -  344.14 fps
+32-bit  read:      2.520 MB/s  -   2.403 MiB/s  -   39.38 fps
+32-bit  move:     22.025 MB/s  -  21.005 MiB/s  -  344.14 fps
+
+-------------------------------- 
+adapter type: VESA, version 2.0 
+VESA OEM string: S3 Incorporated. 86C775/86C785 
+-----------------------------------------------------------------------
+results for VESA mode 0x101 (640x480x8bpp), 4096 KiB trasfer: 
+
+8-bit  write:     10.153 MB/s  -   9.683 MiB/s  -   33.05 fps
+8-bit   read:      1.735 MB/s  -   1.654 MiB/s  -    5.65 fps
+8-bit   move:     10.178 MB/s  -   9.706 MiB/s  -   33.13 fps
+
+16-bit write:     22.967 MB/s  -  21.903 MiB/s  -   74.76 fps
+16-bit  read:      2.220 MB/s  -   2.117 MiB/s  -    7.23 fps
+16-bit  move:     22.967 MB/s  -  21.903 MiB/s  -   74.76 fps
+
+32-bit write:     22.967 MB/s  -  21.903 MiB/s  -   74.76 fps
+32-bit  read:      2.576 MB/s  -   2.457 MiB/s  -    8.39 fps
+32-bit  move:     23.091 MB/s  -  22.021 MiB/s  -   75.17 fps
+
+-------------------------------- 
+adapter type: VESA, version 2.0 
+VESA OEM string: S3 Incorporated. 86C775/86C785 
+-----------------------------------------------------------------------
+results for VESA mode 0x101 (640x480x8bpp) LFB, 4096 KiB trasfer: 
+
+8-bit  write:     10.178 MB/s  -   9.706 MiB/s  -   33.13 fps
+8-bit   read:      1.734 MB/s  -   1.653 MiB/s  -    5.64 fps
+8-bit   move:     10.178 MB/s  -   9.706 MiB/s  -   33.13 fps
+
+16-bit write:     26.189 MB/s  -  24.976 MiB/s  -   85.25 fps
+16-bit  read:      3.468 MB/s  -   3.308 MiB/s  -   11.29 fps
+16-bit  move:     26.189 MB/s  -  24.976 MiB/s  -   85.25 fps
+
+32-bit write:     85.899 MB/s  -  81.920 MiB/s  -  279.62 fps
+32-bit  read:      6.938 MB/s  -   6.616 MiB/s  -   22.58 fps
+32-bit  move:     71.583 MB/s  -  68.267 MiB/s  -  233.02 fps
+
+...and results for Matrox Millenium 2MB:
+
+-------------------------------- 
+adapter type: VESA, version 2.0 
+VESA OEM string: Matrox Graphics Inc. 
+-----------------------------------------------------------------------
+results for VGA mode 0x13 (320x200x8bpp), 4096 KiB trasfer: 
+
+8-bit  write:      9.806 MB/s  -   9.352 MiB/s  -  153.22 fps
+8-bit   read:      1.925 MB/s  -   1.836 MiB/s  -   30.08 fps
+8-bit   move:      9.738 MB/s  -   9.287 MiB/s  -  152.16 fps
+
+16-bit write:     25.117 MB/s  -  23.953 MiB/s  -  392.45 fps
+16-bit  read:      3.718 MB/s  -   3.546 MiB/s  -   58.10 fps
+16-bit  move:     24.826 MB/s  -  23.676 MiB/s  -  387.90 fps
+
+32-bit write:     79.536 MB/s  -  75.852 MiB/s  - 1242.75 fps
+32-bit  read:      6.325 MB/s  -   6.032 MiB/s  -   98.83 fps
+32-bit  move:     67.109 MB/s  -  64.000 MiB/s  - 1048.58 fps
+
+-------------------------------- 
+adapter type: VESA, version 2.0 
+VESA OEM string: Matrox Graphics Inc. 
+-----------------------------------------------------------------------
+results for VGA mode-x 0x13 (320x200x8bpp), 4096 KiB trasfer: 
+
+8-bit  write:      9.783 MB/s  -   9.330 MiB/s  -  152.86 fps
+8-bit   read:      1.925 MB/s  -   1.836 MiB/s  -   30.08 fps
+8-bit   move:      9.761 MB/s  -   9.309 MiB/s  -  152.51 fps
+
+16-bit write:     24.970 MB/s  -  23.813 MiB/s  -  390.16 fps
+16-bit  read:      3.532 MB/s  -   3.368 MiB/s  -   55.18 fps
+16-bit  move:     24.826 MB/s  -  23.676 MiB/s  -  387.90 fps
+
+32-bit write:     40.140 MB/s  -  38.280 MiB/s  -  627.18 fps
+32-bit  read:      6.049 MB/s  -   5.769 MiB/s  -   94.51 fps
+32-bit  move:     39.402 MB/s  -  37.577 MiB/s  -  615.66 fps
+
+-------------------------------- 
+adapter type: VESA, version 2.0 
+VESA OEM string: Matrox Graphics Inc. 
+-----------------------------------------------------------------------
+results for VESA mode 0x101 (640x480x8bpp), 4096 KiB trasfer: 
+
+8-bit  write:      9.806 MB/s  -   9.352 MiB/s  -   31.92 fps
+8-bit   read:      3.406 MB/s  -   3.248 MiB/s  -   11.09 fps
+8-bit   move:      9.761 MB/s  -   9.309 MiB/s  -   31.77 fps
+
+16-bit write:     25.117 MB/s  -  23.953 MiB/s  -   81.76 fps
+16-bit  read:      6.508 MB/s  -   6.206 MiB/s  -   21.18 fps
+16-bit  move:     24.684 MB/s  -  23.540 MiB/s  -   80.35 fps
+
+32-bit write:     82.595 MB/s  -  78.769 MiB/s  -  268.86 fps
+32-bit  read:     11.963 MB/s  -  11.409 MiB/s  -   38.94 fps
+32-bit  move:     68.174 MB/s  -  65.016 MiB/s  -  221.92 fps
+
+-------------------------------- 
+adapter type: VESA, version 2.0 
+VESA OEM string: Matrox Graphics Inc. 
+-----------------------------------------------------------------------
+results for VESA mode 0x101 (640x480x8bpp) LFB, 4096 KiB trasfer: 
+
+8-bit  write:      9.806 MB/s  -   9.352 MiB/s  -   31.92 fps
+8-bit   read:      3.406 MB/s  -   3.248 MiB/s  -   11.09 fps
+8-bit   move:      9.761 MB/s  -   9.309 MiB/s  -   31.77 fps
+
+16-bit write:     25.117 MB/s  -  23.953 MiB/s  -   81.76 fps
+16-bit  read:      6.508 MB/s  -   6.206 MiB/s  -   21.18 fps
+16-bit  move:     24.684 MB/s  -  23.540 MiB/s  -   80.35 fps
+
+32-bit write:     82.595 MB/s  -  78.769 MiB/s  -  268.86 fps
+32-bit  read:     11.930 MB/s  -  11.377 MiB/s  -   38.83 fps
+32-bit  move:     68.174 MB/s  -  65.016 MiB/s  -  221.92 fps
+
+tested on P200MMX\ASUS TXP4\128 MB SDRAM\40 GB HDD\AWE64

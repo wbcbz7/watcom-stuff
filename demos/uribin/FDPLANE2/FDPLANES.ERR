@@ -1,0 +1,6 @@
+FDPLANES.C(6): Warning! W101: Non-portable pointer conversion
+FDPLANES.C(6): Note! I2003: source conversion type is 'long '
+FDPLANES.C(6): Note! I2004: target conversion type is 'unsigned char *'
+FDPLANES.C(357): Warning! W131: No prototype found for function 'memset'
+FDPLANES.C(426): Warning! W131: No prototype found for function 'memcpy'
+FDPLANES.C(450): Warning! W107: Missing return value for function 'main'

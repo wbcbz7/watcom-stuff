@@ -1,0 +1,189 @@
+#include <stdlib.h>
+#include <conio.h>
+#include <math.h>
+#include "rtctimer.h"
+
+unsigned char  *screen = (unsigned char*)0xA0000;
+
+unsigned char  bumpspr[256*256];
+unsigned char  buffer[64000], buffer2[64000];
+unsigned char  envmap[64000];
+// buuu... using 512x384 buffers just for saving some time on screen address calculations...
+unsigned char  bumpmap[512*384];
+
+#define sat(a, l)  ((a > l) ? l : a)
+#define pi         3.141592653589793
+
+void initpal() {
+    int i;
+    
+    outp(0x3C8, 0);
+    for (i = 0; i < 256; i++) {
+        /*
+        outp(0x3C9, sat(8  + (i >> 2) + (i >> 3), 63));
+        outp(0x3C9, sat(10 + (i >> 1) + (i >> 3), 63));
+        outp(0x3C9, sat(12 + (i >> 1) + (i >> 3) + (i >> 4), 63));
+        */
+        
+        outp(0x3C9, sat((i >> 2), 63));
+        outp(0x3C9, sat((i >> 2), 63));
+        outp(0x3C9, sat((i >> 2), 63));
+    }
+}
+
+void initbump() {
+    unsigned char *p = (unsigned char*)&bumpspr;
+    int x, y;
+    float nx, ny, nz;
+    
+    for (y = -128; y < 128; y++) {
+        for (x = -128; x < 128; x++) {
+            nx = ((float)x / 128); ny = ((float)y / 128); 
+            nz = 1 - sqrt(nx*nx + ny*ny);
+            nz = (nz < 0 ? 0 : nz * 255);
+            *p++ = (unsigned char)nz;
+        }
+    }
+}
+
+void initenv() {
+    unsigned char *p = (unsigned char*)&envmap;
+    int i, k;
+    
+    // fill with random values
+    for (i = 0; i < 64000; i++) *p++ = (rand() & 0x1F);
+    
+    // blur it
+    for (k = 0; k < 1; k++) {
+        p = (unsigned char*)&envmap;
+        for (i = 0; i < 64000; i++) {
+            *p = (*(p+1) + *(p-1) + *(p+320) + *(p-320)) >> 2;
+            p++;
+        }
+    }
+}
+
+// move lightsource - bump sprite
+void movebump(int lx, int ly) {
+    unsigned char *p = (unsigned char*)&bumpspr;
+    unsigned char *v = (unsigned char*)&bumpmap;
+    int x = (lx + (256-128)), y = (ly + (192-128));
+    unsigned int l = (y << 9) + x;
+    
+    // clear old map
+    _asm {
+        mov    ecx, (512*384)/4
+        mov    edi, v
+        xor    eax, eax
+        cld
+        rep    stosd
+    }
+    
+    v = (unsigned char*)&bumpmap[l];
+    // copy sprite to new map
+    _asm {
+        mov    esi, p
+        mov    edi, v
+        mov    ecx, 256
+        cld
+        @outer:
+        push   ecx
+        mov    ecx, (256/4)
+        rep    movsd
+        add    edi, (512 - 256)
+        pop    ecx
+        dec    ecx
+        jnz    @outer
+    }
+}
+
+void drawbump() {
+    unsigned char *p = (unsigned char*)&envmap;
+    unsigned char *s = (unsigned char*)&buffer;
+    unsigned char *v = (unsigned char*)&bumpmap;
+    int x, y, dx, dy;
+    
+    for (y = 92; y < 200+92; y++) {
+        for (x = 96; x < 320+96; x++) {
+            dx = (*(p+1) - *(p-1)) + x; dy = (*(p+320) - *(p-320)) + y;
+            //dx = x; dy = y;
+            *s++ = v[(dy << 9) + dx];
+            p++;
+        }
+    }
+}
+
+int tick = 0;
+
+void timer() { tick++; }
+
+int main() {
+    int i;
+    
+    initbump();
+    initenv();
+    
+    _asm {    
+        // zpizzheno ;)
+        mov ax,13h
+        int 10h       // regular mode 13h chained
+
+        mov dx,3d4h   // remove protection
+        mov al,11h
+        out dx,al
+        inc dl
+        in  al,dx
+        and al,7fh
+        out dx,al
+
+        mov dx,3c2h   // misc output
+        mov al,0e3h   // clock
+        out dx,al
+
+        mov dx,3d4h
+        mov ax,00B06h // Vertical Total
+        out dx,ax
+        mov ax,03E07h // Overflow
+        out dx,ax
+        mov ax,0C310h // Vertical start retrace
+        out dx,ax
+        mov ax,08C11h // Vertical end retrace
+        out dx,ax
+        mov ax,08F12h // Vertical display enable end
+        out dx,ax
+        mov ax,09015h // Vertical blank start
+        out dx,ax
+        mov ax,00B16h // Vertical blank end
+        out dx,ax
+    }
+    initpal();
+
+    rtc_initTimer(3);
+    rtc_setTimer(&timer, rtc_timerRate / 60);
+    
+    while (!kbhit()) {
+        i = tick;
+        
+        while ((inp(0x3DA) & 8) == 8) {}
+        while ((inp(0x3DA) & 8) != 8) {}
+
+        outp(0x3C8, 0); outp(0x3C9, 63); outp(0x3C9, 0); outp(0x3C9, 0);
+        
+        memcpy(screen, &buffer, 64000);
+
+        outp(0x3C8, 0); outp(0x3C9, 63); outp(0x3C9, 63); outp(0x3C9, 0);
+        movebump(0, 0);
+        outp(0x3C8, 0); outp(0x3C9, 63); outp(0x3C9, 0); outp(0x3C9, 63);
+        drawbump();
+        outp(0x3C8, 0); outp(0x3C9, 0); outp(0x3C9, 0); outp(0x3C9, 0);
+    }
+    getch();
+    
+    rtc_freeTimer();
+    
+    _asm {
+        mov  ax, 3
+        int  10h
+    }
+    return 0;
+}

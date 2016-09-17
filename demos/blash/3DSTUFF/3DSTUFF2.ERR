@@ -1,0 +1,6 @@
+3DSTUFF2.C(42): Warning! W101: Non-portable pointer conversion
+3DSTUFF2.C(42): Note! I2003: source conversion type is 'int '
+3DSTUFF2.C(42): Note! I2004: target conversion type is 'unsigned char *'
+3DSTUFF2.C(275): Warning! W131: No prototype found for function 'memcpy'
+3DSTUFF2.C(309): Warning! W107: Missing return value for function 'main'
+3DSTUFF2.C(309): Warning! W138: No newline at end of file

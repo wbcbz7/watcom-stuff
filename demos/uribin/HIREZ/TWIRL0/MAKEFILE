@@ -1,0 +1,29 @@
+
+TARGET   = twirl
+
+CC       = wcc386.exe
+LD       = wlink.exe
+CFLAGS   = -fp5 -zp16 -oneatx -s
+LFLAGS   =
+
+# LIBS     = ..\..\etc\libpng\libpng.lib
+# LIBSTR   = library {$(LIBS)}
+
+OBJS     = $(TARGET).obj
+OBJSTR   = file {$(OBJS)}
+
+all: $(TARGET).exe
+
+$(TARGET).exe: $(OBJS) .symbolic
+	$(LD) name $(TARGET) file {$(OBJS)} $(LIBSTR) system pmode $(LFLAGS)
+	$(TARGET).exe
+
+$(TARGET).obj : $(TARGET).c
+	$(CC) $< $(CFLAGS)
+	
+	
+# clean all
+clean: .symbolic
+	del *.obj
+	del *.exe
+	del *.err

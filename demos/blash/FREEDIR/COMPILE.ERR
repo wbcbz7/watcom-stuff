@@ -1,0 +1,29 @@
+COMPILE.BAT(1): Error! E1061: Expecting data or function declaration, but found ':'
+COMPILE.BAT(1): Error! E1026: Invalid declarator
+COMPILE.BAT(1): Error! E1009: Expecting ';' but found ':'
+COMPILE.BAT(1): Error! E1061: Expecting data or function declaration, but found ':'
+COMPILE.BAT(1): Warning! W132: No storage class or type specified
+COMPILE.BAT(1): Error! E1009: Expecting ';' but found '.'
+COMPILE.BAT(1): Error! E1061: Expecting data or function declaration, but found '.'
+COMPILE.BAT(1): Error! E1022: Missing or misspelled data type near 'exe'
+COMPILE.BAT(1): Warning! W132: No storage class or type specified
+COMPILE.BAT(1): Error! E1009: Expecting ';' but found '.'
+COMPILE.BAT(1): Error! E1061: Expecting data or function declaration, but found '.'
+COMPILE.BAT(1): Warning! W132: No storage class or type specified
+COMPILE.BAT(1): Error! E1009: Expecting ';' but found '-'
+COMPILE.BAT(1): Error! E1061: Expecting data or function declaration, but found '-'
+COMPILE.BAT(1): Warning! W132: No storage class or type specified
+COMPILE.BAT(1): Error! E1009: Expecting ';' but found '-'
+COMPILE.BAT(1): Error! E1061: Expecting data or function declaration, but found '-'
+COMPILE.BAT(1): Warning! W132: No storage class or type specified
+COMPILE.BAT(1): Error! E1009: Expecting ';' but found '-'
+COMPILE.BAT(1): Error! E1061: Expecting data or function declaration, but found '-'
+COMPILE.BAT(1): Warning! W132: No storage class or type specified
+COMPILE.BAT(1): Error! E1009: Expecting ';' but found '-'
+COMPILE.BAT(1): Error! E1061: Expecting data or function declaration, but found '-'
+COMPILE.BAT(1): Warning! W132: No storage class or type specified
+COMPILE.BAT(1): Error! E1009: Expecting ';' but found '-'
+COMPILE.BAT(1): Error! E1061: Expecting data or function declaration, but found '-'
+COMPILE.BAT(1): Warning! W132: No storage class or type specified
+COMPILE.BAT(2): Error! E1011: Symbol 'pmodew' has not been declared
+COMPILE.BAT(2): Error! E1147: Too many errors: compilation aborted

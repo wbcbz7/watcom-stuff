@@ -1,0 +1,447 @@
+
+                            Indoor Music System
+
+                 Copyright 1994-1997 Niklas Beisert aka pascal
+
+
+Indoor Music System (IMS) is a module playback music system for
+non-commercial use.
+
+LICENSE:
+========
+
+  You may only use IMS (IMS alwany means IMS or any (derived) parts of IMS,
+  use means: use, compile, link, print, execute, distribute, make changes to)
+  if you accept the following conditions:
+
+  The author may invalidate this license for any user at any time without
+  any reason. If so that user may not use IMS further on.
+  This license may change in any version. For public releases you
+  have to get the author's permission. (see below)
+
+  This material is not freeware. You are allowed to copy it without
+  restrictions for non-commercial use. No payment of any kind may be charged
+  for this product or any combination of products or services including this
+  product without the author's authorization and official written license.
+  Commercial use is strictly prohibited.
+
+  You take full responsibility for the operation of this software and
+  any consequences thereof. The author (Niklas Beisert) cannot accept
+  liability for damages or failures arising from the use of this software.
+
+  Your production must clearly state that it uses IMS if the setup
+  screen is not used.
+
+  You MAY NOT:
+
+    -use IMS for anything else as stated below
+    -charge a fee for IMS, products which use IMS, or products which
+      indirectly depend on IMS. You may charge a small fee (not exceeding
+      $10) for copying only.
+    -distribute modified versions of IMS without clearly stating they are
+      not the original version.
+    -use IMS if you do not understand this license or parts of it.
+    -use IMS for public releases without the authors permission.
+    -use IMS without crediting the author.
+    -use IMS commercially in any way.
+    -use IMS for/in advertisements/commercials.
+
+  You MAY:
+
+    -use IMS for private purposes.
+    -use IMS products to which applies the same or an equivalent license.
+    -distribute the unmodified distribution archive.
+    -modify and distribute modified versions of IMS if:
+      -this documentation is included in its original unmodified version.
+      -all files which contain source from the original source files include
+        the header of original source files.
+      -you include a separate documentation about the changes you made,
+        with your address (real/email) and contact the author.
+      -you comment every change you made plus a summary of changes per file.
+      -you do not make major changes like ports to different platforms
+        without the authors permission.
+
+  By using this software you indicate that you have fully understood and
+  agreed to this license.
+
+
+Asking for a permission to use IMS in a public production:
+==========================================================
+
+  If you want to use IMS in a production that will be available to
+  the public for free or if you plan to contribute to a competition
+  fill the following form and email it to nbeisert@physik.tu-muenchen.de.
+  I might give you the permission or reject it without giving you
+  a reason. Of course your information will be treated confidentially.
+  If any information in the form is incorrect the permission to use IMS
+  will void, and you get into trouble because of illegal use of IMS.
+  If you want to participate in a competition with your production
+  and win some money, I ask you to give me a little bit of it.
+  This sound system was a lot of work for me and took plenty of time to
+  complete. Better fill in a value in the form or I might not give you
+  the permission. You might say, the music system has nothing to do with
+  winning a competition or not and you don't want to give me anything:
+  fine, there are other free soundsystems around, why not use them.
+  Think of it as a tip in a restaurant. In case you win something,
+  be fair and contact me!
+
+------------------------------------------------------------------------------
+
+I/we would like to use Indoor Music System in my/our production.
+
+          name:
+   description:
+         group:
+     group www:
+    add. info.:
+
+Information about the person responsible for the production:
+
+      realname:
+    handle/aka:
+  real address:
+
+          city:
+
+       country:
+         email:
+
+List of ALL persons involved in the production (realnames and handles):
+
+
+
+This production will contribute to a competition:
+
+   competition:
+   event/party:
+money to share:     %
+
+------------------------------------------------------------------------------
+
+
+What you need:
+==============
+
+  -Watcom C++ 10.0 and above
+  -Turbo Assembler 3.0 and above
+
+
+portability:
+============
+
+  I would not call IMS portable at the moment. I've used special Watcom C
+  features, most importantly the #pragma aux directive and interface to
+  assembly language. There are also several assumptions I made about the
+  C compiler which makes a recompile on a different platform impossible.
+  I plan to change all the sources for portability. I know that IMS works
+  fine under Windows 95/NT with a little driver. If you want to have IMS
+  on other platforms contact me, but only if you know what to do and
+  would also code and test it. The libraries was compiled with Watcom C 10.6
+  (and TASM 3.1), if you use any other version, recompile them.
+
+
+How to use it all:
+==================
+
+  AFAIK most (demo) coders are not interested in sound coding, they just need
+  a background player for their production. A simple example of how to set
+  up a background player should be enough for you: see test.cpp.
+  If you use register calling convention you can use IMS.LIB and BINFILE.LIB,
+  otherwise you must remake them with stack calling convention.
+  I will release the Lasse Reinboeng sources soon as an example of how to
+  use IMS in a real demo/intro. (LASSESRC.ZIP)
+  You can enable the PAS driver at the top of ims.obj.
+
+
+binfile:
+========
+
+  Did I say I like binfile? :) Ok... I made binfile! =} nothing really
+  special... just simple and easy to use and enhance. I hate the
+  standard C functions for file-io. And fstream is kinda big and still
+  not what I want. binfile makes access to binary data files easy.
+  binfile is a base class and it can do nothing, but as soon as you overload
+  some basic functions (open, close, read, write, seek) you get many
+  higher level functions for free, most importantly easy bit, byte, word and
+  dword io. With a little coding you use the oop concepts behind it and make
+  classes which read directly from archives, access memory instead of
+  files, output directly to the soundcard, or implement a stream via tcp/ip.
+  Use binfile without restrictions in your programs if you like.
+
+  sbinfile is the binfile for standard file io. open files with
+  open(filename, mode), there are only a few modes like openro, openrw
+  and opencr.
+  abinfile is a binfile contained in another binfile (archive). You can use
+  it if you want to put the module in one big file with all the data.
+
+
+initialization:
+===============
+
+  not much to say. just some code and hints.
+
+    imsinitstruct is;
+    imsFillDefaults(is);
+
+  then modify "is" to your needs. most values are default values for
+  the setup screen. for example:
+
+    is.usequiet=1;
+      // quiet option (command line)
+    if (!imsInit(is))
+      fail
+
+    // use IMS
+
+    imsClose();
+
+
+xm player:
+==========
+
+  The xm player can play XMs and MODs very accurately. Far more accurately
+  than the general module player.
+
+    // fil is an open binfile
+    xmodule mod;
+
+    xmpLoadModule(mod, fil); // load xm
+
+    xmpLoadSamples(mod); // upload samples to soundcard
+
+    xmpPlayModule(mod); // play
+    xmpStopModule();
+
+    xmpFreeModule(mod);
+
+
+it player:
+==========
+
+  the it player is done as a class: itplayerclass.
+
+    // fil is an open binfile
+    itplayerclass itplayer;
+    itplayerclass::module mod;
+
+    mod.load(fil); // load it
+
+    itplayerclass.loadsamples(mod); // upload samples to soundcard
+
+    itplayerclass.play(mod, nch); // open nch channels and play
+    itplayerclass.stop();
+
+    mod.free(mod);
+
+
+general module player:
+======================
+
+  Only a few loaders included in the package.
+
+    // fil is an open binfile
+    gmdmodule mod;
+
+    mpLoadS3M(mod, fil); // load S3M
+    mpReduceSamples(mod); // sorry, some extra work
+
+    mpLoadSamples(mod); // upload samples to soundcard.
+
+    mpPlayModule(mod);
+    mpStopModule();
+
+    mpFree(mod);
+
+
+mixer control:
+==============
+
+  Hey, there are some guys out there who do not own a device like GUS
+  which does all the mixing for you. Actually there are a lot, so
+  do not ignore them!
+  If you do screen synchronization the mixer background routines might
+  interfere. Therefore you can set the size of the playback buffer, you
+  can call the mixer explicitly and you can make the background routines
+  only update the buffer in an emergency situation.
+  Currently the mixer will be called about 70 times a second (there is no
+  nice way to change it yet).
+  To set the buffersize set bufsize in the imsinitstruct to 65536 times the
+  length of the buffer in seconds. Note that the buffer is limited to 64k.
+  If you want to update the buffer manually (eg. once per frame is a good
+  idea, when you expect high framerates) call mcpIdle (buf only if mcpIdle
+  is not zero: if (mcpIdle) mcpIdle();)
+  To make the background routines sleep until there was no foreground call
+  (mcpIdle) set pollmin in imsinitstruct to 65536 times the critical time
+  in seconds. (Set it to a value reasonably smaller than bufsize of course!)
+
+
+synchronization/timing:
+=======================
+
+  At the moment I can only think of one reliable way to synchronize to
+  the music. There is a function which gives you a time value which
+  is perfectly synchronized with the music. Furthermore there is a
+  function which calculates the same time value from a specific module
+  position. This function should be called at the beginning of your
+  program or you precalclate the time values with another program and
+  insert them into the code. The timer starts with zero at the very
+  first tick of the module. Note that before the first tick the timer
+  will be negative. It will increase by 65536 per second. All your
+  timing should be based on the timer function. I've heard that some
+  guys use a periodically called function to do timing... All I can say
+  is that I do not support this method, it's not reliable. It's not
+  reliable either to use the system timer for timing. If you set
+  up a soundcard to play something at 44.1kHz, it means that it will
+  sound as if it did, although after some minutes you get a lag of a
+  second, which you'll definitely notice!
+
+  Now for you lazy guys out there:
+
+  There are also functions to get the current module position or
+  sync value. These functions are synchronized exactly.
+  (even if you set a large playback buffer for the mixer)
+  In XM/MOD sync is done by command Wxx, Sxx or EFx.
+  In IT sync is done by command Zxx.
+
+  You can also set events. Events are special positions in a module and the
+  player will remember the time when the event was hit. for example you can
+  set an event to order 2, row 4, tick 0 with a repeat of 8 rows. another
+  function will return an error until order 2, row 4, tick 0 was first
+  played. then it will return that position and the time since that position
+  was played. after 8 rows it will return order 2, row 12, tick 0 and the
+  time since that position. other functions can tell you the length of one
+  tick or one row. With events you can synchronize your display with
+  a rhythm or special effects. (note: you can set one event per module
+  channel, i think that should be enough)
+
+  IMS does not (yet) offer automatic screen synchronization. I never needed
+  it and it was a pain to figure out how to. :) So, if you find a reliable
+  way to do so, don't hesitate and write me (fine, clean working code).
+  Do not clear the interrupt flag for a longer period of time or wavetable
+  devices will get into trouble. With mixer control you can do manual screen
+  sync, but it does not work with wavetable devices... :(
+
+  functions:
+    xmpGetTime()
+    itplayerclass::gettime()
+    mcpGet(-1, mcpGTimer)
+      returns timer value (in 65536ths of a second since module start)
+
+    xmpGetRealPos()
+    itplayerclass::getrealpos()
+    mpGetRealPos()
+      returns (order<<16)|(row<<8)|tick
+
+    xmpGetTickTime()
+    xmpGetRowTime()
+    itplayerclass::getticktime()
+    itplayerclass::getrowtime()
+      returns the time for one tick/row
+
+    xmpSetEvPos(ch, pos, type, mod)
+    itplayerclass::setevpos(ch, pos, type, mod)
+      sets a sync event
+        ch: module channel (handle) for event
+        pos: start position ((order<<16)|(row<<8)|tick)
+        type: 0:once, 1:ticks, 2:rows, 3:orders
+        mod: number of (type) between events
+
+    xmpGetEvPos(ch, time)
+      gets last event and time since
+        ch: module channel (handle) of event
+        time: will be set to time since last event
+        return: position of last event or -1 if no event
+
+    xmpFindEvPos(pos, time)
+      searches all events for a specific position
+        pos: position to look for
+        time: will be set to time since position
+        return: position or -1 if no event found
+
+    itplayerclass::getsync(ch, time)
+      returns the sync value for channel ch or global sync for ch==-1
+        time: will be set to time since sync was set.
+
+    xmpPrecalcTime(module, startpos, calc, n, ite)
+    itplayerclass::module.precalctime(startpos, calc, n, ite)
+    gmdPrecalcTime(module, startpos, calc, n, ite)
+      module position to timer value calculation:
+        startpos: starting position: (order<<8)|row
+        calc: array of positions and timer values
+        n: number of positions to calculate
+        ite: maximum number of ticks to process
+        returns: 0: failed otherwise 1.
+      calc[x][0] contains the event:
+        (order<<16)|(row<<8)|tick: module position
+                               -1: module loops
+                        -256-sync: syncvalue hit
+      calc[x][1] must be initialized with -1 or minus the number of times
+        the event must occur before the time is calculated. it will contain
+        the time value afterwards.
+      ite must be set to a reasonably high value like 10000 or 100000,
+        after that many ticks the function will fail if not all events were
+        found.
+
+
+revision history:
+=================
+
+  0.6:
+    -license changed
+    -new sync features (events, exact module position)
+    -new it player
+    -ptm loader included
+    -several smaller fixes
+
+  0.5:
+    -first release
+
+
+known bugs:
+===========
+
+  -GUS Software timing is messed up a little (could someone fix it, please?)
+
+
+future enhancements:
+====================
+
+  -The structure of IMS is not final and there have been many changes lately,
+    I still have to figure out several things. Expect changes.
+  -Some changes will always be made, so do not expect that you can use your
+    old sources without changes with new releases. This is not a commercial
+    project (yet) and if you complain your license might void. =)
+  -sound, not just music (ie. foreground playing)
+  -portability
+
+
+contact:
+========
+
+  Niklas Beisert
+  Oberstrasse 84
+  20149 Hamburg
+  Germany
+
+  nbeisert@physik.tu-muenchen.de
+
+  send your questions to: null@nowhere.nil
+  complain online at: www.haltsmaul.com
+
+
+thanks, source and documentation used for creating IMS:
+=======================================================
+
+  Tammo Hinrichs: for testing / XM help / Interwave (reverb) code
+  Sahara Surfers: PAS driver ported from MIDAS.
+  Jarno Heikkinen: Interwave code (in MIDAS).
+  Omega player: AWE coding example.
+  Judge Dredd: AWE documentation.
+  Ilya Naumov: ESS sources.
+  ???: for letting me test and bugfix ESS on his computer.
+  GUS SDK: GUS / WSS coding.
+  Timur Davidenko for WC11 fixes.
+  Jeffrey Lim for help on IT and probably things to come.
+  And of course all the guys who helped me getting cubic player
+    and IMS the way it is now.
+

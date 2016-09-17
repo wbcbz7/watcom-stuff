@@ -1,0 +1,15 @@
+FREEDIR.C(5): Warning! W101: Non-portable pointer conversion
+FREEDIR.C(5): Note! I2003: source conversion type is 'int '
+FREEDIR.C(5): Note! I2004: target conversion type is 'unsigned char *'
+FREEDIR.C(45): Error! E1011: Symbol 'fdgrid_u' has not been declared
+FREEDIR.C(45): Error! E1045: Subscript on non-array
+FREEDIR.C(45): Error! E1011: Symbol 'fdgrid_v' has not been declared
+FREEDIR.C(45): Error! E1045: Subscript on non-array
+FREEDIR.C(46): Error! E1011: Symbol 'uy1' has not been declared
+FREEDIR.C(46): Error! E1045: Subscript on non-array
+FREEDIR.C(46): Error! E1045: Subscript on non-array
+FREEDIR.C(50): Error! E1045: Subscript on non-array
+FREEDIR.C(50): Error! E1045: Subscript on non-array
+FREEDIR.C(51): Error! E1045: Subscript on non-array
+FREEDIR.C(51): Error! E1045: Subscript on non-array
+FREEDIR.C(266): Warning! W107: Missing return value for function 'main'

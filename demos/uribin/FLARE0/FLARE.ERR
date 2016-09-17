@@ -1,0 +1,6 @@
+FLARE.C(49): Warning! W101: Non-portable pointer conversion
+FLARE.C(49): Note! I2003: source conversion type is 'int '
+FLARE.C(49): Note! I2004: target conversion type is 'unsigned char *'
+FLARE.C(379): Warning! W131: No prototype found for function 'memcpy'
+FLARE.C(421): Warning! W107: Missing return value for function 'main'
+FLARE.C(421): Warning! W138: No newline at end of file

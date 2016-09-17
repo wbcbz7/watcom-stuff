@@ -1,0 +1,5 @@
+TUNNEL.C(5): Warning! W101: Non-portable pointer conversion
+TUNNEL.C(5): Note! I2003: source conversion type is 'int '
+TUNNEL.C(5): Note! I2004: target conversion type is 'unsigned char *'
+TUNNEL.C(445): Warning! W131: No prototype found for function 'memcpy'
+TUNNEL.C(472): Warning! W107: Missing return value for function 'main'

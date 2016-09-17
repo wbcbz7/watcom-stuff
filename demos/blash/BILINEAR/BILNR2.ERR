@@ -1,0 +1,5 @@
+BILNR2.C(6): Warning! W101: Non-portable pointer conversion
+BILNR2.C(6): Note! I2003: source conversion type is 'int '
+BILNR2.C(6): Note! I2004: target conversion type is 'unsigned char *'
+BILNR2.C(103): Warning! W131: No prototype found for function 'memcpy'
+BILNR2.C(118): Warning! W107: Missing return value for function 'main'

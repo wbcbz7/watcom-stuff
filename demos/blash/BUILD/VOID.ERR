@@ -1,0 +1,11 @@
+usmplay.h(163): Warning! W138: No newline at end of file
+void.c(21): Warning! W101: Non-portable pointer conversion
+void.c(21): Note! I2003: source conversion type is 'int '
+void.c(21): Note! I2004: target conversion type is 'unsigned char *'
+parts\\tunnel.c(110): Warning! W131: No prototype found for function 'memcpy'
+parts\\3dstuff.c(233): Warning! W138: No newline at end of file
+parts\\3dstuff2.c(206): Warning! W131: No prototype found for function 'close'
+parts\\3dstuff2.c(252): Warning! W138: No newline at end of file
+void.c(86): Warning! W131: No prototype found for function 'strcmp'
+void.c(86): Warning! W131: No prototype found for function 'strupr'
+void.c(191): Warning! W107: Missing return value for function 'main'

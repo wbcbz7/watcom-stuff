@@ -1,0 +1,1 @@
+@wcl386.exe memcpy.c -ox -fp5 -zp16 -et -l=pmode  

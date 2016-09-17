@@ -1,0 +1,4 @@
+RTCTIMER.C(45): Warning! W106: Constant out of range - truncated
+RTCTIMER.C(45): Note! I2003: source conversion type is 'long '
+RTCTIMER.C(45): Note! I2004: target conversion type is 'int '
+RTCTIMER.C(80): Warning! W107: Missing return value for function 'main'

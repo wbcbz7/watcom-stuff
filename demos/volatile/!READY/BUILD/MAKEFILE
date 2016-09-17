@@ -1,0 +1,113 @@
+
+TARGET   = volatile
+
+CC       = wpp386.exe
+LD       = wlink.exe
+CFLAGS   = -fp5 -fpi87 -zp16 -oneatx -s
+LFLAGS   =
+
+SYSTEM   = pmode
+
+C        = cpp
+H        = h
+O        = obj
+
+LIBS     = ims06\ims.lib ims06\binfile.lib flexptc\flexptc.lib
+LIBSTR   = library {$(LIBS)}
+
+HLIST    = parts\rblur_0\rblur.$(H) parts\logo\logo.$(H) parts\bdist_0\bmpdist.$(H) parts\flat_0\flat.$(H) parts\wf\wf.$(H) parts\cube\cube.$(H) parts\fdsphere\fdsphere.$(H) parts\rblur_1\rblur.$(H) parts\fdtunnel\fdtunnel.$(H) parts\credits\credits.$(H)
+
+PARTS    = parts\rblur_0\rblur.$(O) parts\logo\logo.$(O) parts\bdist_0\bmpdist.$(O) parts\flat_0\flat.$(O) parts\wf\wf.$(O) parts\cube\cube.$(O) parts\fdsphere\fdsphere.$(O) parts\rblur_1\rblur.$(O) parts\fdtunnel\fdtunnel.$(O) parts\credits\credits.$(O)
+PARTSTR  = file {$(PARTS)}
+
+OBJS     = $(TARGET).$(O) common\matrix.$(O) common\alpha.$(O) common\tmap.$(O)
+OBJSTR   = file {$(OBJS)}
+
+all: $(TARGET).exe 
+
+$(TARGET).exe: $(OBJS) $(HLIST) $(PARTS) .symbolic
+    %write $(TARGET).lnk name $(TARGET)
+	%write $(TARGET).lnk $(OBJSTR) 
+	%write $(TARGET).lnk $(PARTSTR) 
+	%write $(TARGET).lnk $(LIBSTR) 
+	%write $(TARGET).lnk system $(SYSTEM)
+	$(LD) @$(TARGET).lnk $(LFLAGS)
+	del $(TARGET).lnk
+
+$(TARGET).$(O) : $(TARGET).$(C) common\rtctimer.$(H)
+	$(CC) $(TARGET).$(C) $(CFLAGS)
+
+# parts .obj includes
+
+parts\rblur_0\rblur.$(O) : parts\rblur_0\rblur.$(C) parts\rblur_0\rblur.$(H)
+	cd parts\rblur_0
+	$(CC) rblur.$(C) $(CFLAGS)
+	cd ..\..
+	
+parts\logo\logo.$(O) : parts\logo\logo.$(C) parts\logo\logo.$(H)
+	cd parts\logo
+	$(CC) logo.$(C) $(CFLAGS)
+	cd ..\..
+
+parts\bdist_0\bmpdist.$(O) : parts\bdist_0\bmpdist.$(C) parts\bdist_0\bmpdist.$(H)
+	cd parts\bdist_0
+	$(CC) bmpdist.$(C) $(CFLAGS)
+	cd ..\..
+	
+parts\flat_0\flat.$(O) : parts\flat_0\flat.$(C) parts\flat_0\flat.$(H)
+	cd parts\flat_0
+	$(CC) flat.$(C) $(CFLAGS)
+	cd ..\..
+	
+parts\wf\wf.$(O) : parts\wf\wf.$(C) parts\wf\wf.$(H)
+	cd parts\wf
+	$(CC) wf.$(C) $(CFLAGS)
+	cd ..\..
+	
+parts\cube\cube.$(O) : parts\cube\cube.$(C) parts\cube\cube.$(H)
+	cd parts\cube
+	$(CC) cube.$(C) $(CFLAGS)
+	cd ..\..
+	
+parts\fdsphere\fdsphere.$(O) : parts\fdsphere\fdsphere.$(C) parts\fdsphere\fdsphere.$(H)
+	cd parts\fdsphere
+	$(CC) fdsphere.$(C) $(CFLAGS)
+	cd ..\..
+	
+parts\rblur_1\rblur.$(O) : parts\rblur_1\rblur.$(C) parts\rblur_1\rblur.$(H)
+	cd parts\rblur_1
+	$(CC) rblur.$(C) $(CFLAGS)
+	cd ..\..
+	
+parts\fdtunnel\fdtunnel.$(O) : parts\fdtunnel\fdtunnel.$(C) parts\fdtunnel\fdtunnel.$(H)
+	cd parts\fdtunnel
+	$(CC) fdtunnel.$(C) $(CFLAGS)
+	cd ..\..	
+	
+parts\credits\credits.$(O) : parts\credits\credits.$(C) parts\credits\credits.$(H)
+	cd parts\credits
+	$(CC) credits.$(C) $(CFLAGS)
+	cd ..\..	
+	
+# common stuff
+
+common\matrix.$(O) : common\matrix.$(C) common\matrix.$(H)
+	cd common
+	$(CC) matrix.$(C) $(CFLAGS)
+	cd ..
+
+common\alpha.$(O) : common\alpha.$(C) common\alpha.$(H)
+	cd common
+	$(CC) alpha.$(C) $(CFLAGS)
+	cd ..
+	
+common\tmap.$(O) : common\tmap.$(C) common\tmap.$(H)
+	cd common
+	$(CC) tmap.$(C) $(CFLAGS)
+	cd ..
+	
+# clean all
+clean: .symbolic
+	del *.obj
+	del *.exe
+	del *.err

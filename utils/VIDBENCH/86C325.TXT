@@ -1,0 +1,76 @@
+-------------------------------- 
+video adapter type: VESA, version 2.0 
+VESA OEM string:    S3 Incorporated. 86C325 
+VESA adapter name:  S3 VBE/Core 2.0 
+-----------------------------------------------------------------------
+results for VGA mode 0x13 (320x200x8bpp), 4096 KiB trasfer: 
+
+8-bit  write:     12.558 MB/s  -  11.977 MiB/s  -  196.22 fps
+8-bit   read:      1.871 MB/s  -   1.784 MiB/s  -   29.23 fps
+8-bit   move:     12.521 MB/s  -  11.941 MiB/s  -  195.65 fps
+
+16-bit write:     31.122 MB/s  -  29.681 MiB/s  -  486.29 fps
+16-bit  read:      3.741 MB/s  -   3.567 MiB/s  -   58.45 fps
+16-bit  move:     31.122 MB/s  -  29.681 MiB/s  -  486.29 fps
+
+32-bit write:     37.347 MB/s  -  35.617 MiB/s  -  583.55 fps
+32-bit  read:      4.683 MB/s  -   4.466 MiB/s  -   73.17 fps
+32-bit  move:     37.347 MB/s  -  35.617 MiB/s  -  583.55 fps
+
+-------------------------------- 
+video adapter type: VESA, version 2.0 
+VESA OEM string:    S3 Incorporated. 86C325 
+VESA adapter name:  S3 VBE/Core 2.0 
+-----------------------------------------------------------------------
+results for VGA mode-x 0x13 (320x200x8bpp), 4096 KiB trasfer: 
+
+8-bit  write:     12.558 MB/s  -  11.977 MiB/s  -  196.22 fps
+8-bit   read:      1.873 MB/s  -   1.786 MiB/s  -   29.26 fps
+8-bit   move:     12.558 MB/s  -  11.977 MiB/s  -  196.22 fps
+
+16-bit write:     18.755 MB/s  -  17.886 MiB/s  -  293.04 fps
+16-bit  read:      2.343 MB/s  -   2.234 MiB/s  -   36.61 fps
+16-bit  move:     18.755 MB/s  -  17.886 MiB/s  -  293.04 fps
+
+32-bit write:     18.755 MB/s  -  17.886 MiB/s  -  293.04 fps
+32-bit  read:      2.577 MB/s  -   2.458 MiB/s  -   40.27 fps
+32-bit  move:     18.674 MB/s  -  17.809 MiB/s  -  291.78 fps
+
+-------------------------------- 
+video adapter type: VESA, version 2.0 
+VESA OEM string:    S3 Incorporated. 86C325 
+VESA adapter name:  S3 VBE/Core 2.0 
+-----------------------------------------------------------------------
+results for VESA mode 0x101 (640x480x8bpp), 4096 KiB trasfer: 
+
+8-bit  write:     12.632 MB/s  -  12.047 MiB/s  -   41.12 fps
+8-bit   read:      1.760 MB/s  -   1.679 MiB/s  -    5.73 fps
+8-bit   move:     12.632 MB/s  -  12.047 MiB/s  -   41.12 fps
+
+16-bit write:     30.678 MB/s  -  29.257 MiB/s  -   99.86 fps
+16-bit  read:      3.519 MB/s  -   3.356 MiB/s  -   11.46 fps
+16-bit  move:     30.460 MB/s  -  29.049 MiB/s  -   99.15 fps
+
+32-bit write:     75.350 MB/s  -  71.859 MiB/s  -  245.28 fps
+32-bit  read:      7.052 MB/s  -   6.726 MiB/s  -   22.96 fps
+32-bit  move:     74.051 MB/s  -  70.620 MiB/s  -  241.05 fps
+
+-------------------------------- 
+video adapter type: VESA, version 2.0 
+VESA OEM string:    S3 Incorporated. 86C325 
+VESA adapter name:  S3 VBE/Core 2.0 
+-----------------------------------------------------------------------
+results for VESA mode 0x101 (640x480x8bpp) LFB, 4096 KiB trasfer: 
+
+8-bit  write:     12.632 MB/s  -  12.047 MiB/s  -   41.12 fps
+8-bit   read:      1.760 MB/s  -   1.679 MiB/s  -    5.73 fps
+8-bit   move:     12.632 MB/s  -  12.047 MiB/s  -   41.12 fps
+
+16-bit write:     30.678 MB/s  -  29.257 MiB/s  -   99.86 fps
+16-bit  read:      3.519 MB/s  -   3.356 MiB/s  -   11.46 fps
+16-bit  move:     30.460 MB/s  -  29.049 MiB/s  -   99.15 fps
+
+32-bit write:     75.350 MB/s  -  71.859 MiB/s  -  245.28 fps
+32-bit  read:      7.052 MB/s  -   6.726 MiB/s  -   22.96 fps
+32-bit  move:     74.051 MB/s  -  70.620 MiB/s  -  241.05 fps
+

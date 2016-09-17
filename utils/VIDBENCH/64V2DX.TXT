@@ -1,0 +1,76 @@
+-------------------------------- 
+video adapter type: VESA, version 2.0 
+VESA OEM string:    S3 Incorporated. 86C775/86C785 
+VESA adapter name:  Trio64V2/DX/GX 
+-----------------------------------------------------------------------
+results for VGA mode 0x13 (320x200x8bpp), 4096 KiB trasfer: 
+
+8-bit  write:     10.201 MB/s  -   9.729 MiB/s  -  159.39 fps
+8-bit   read:      1.674 MB/s  -   1.597 MiB/s  -   26.16 fps
+8-bit   move:     10.201 MB/s  -   9.729 MiB/s  -  159.39 fps
+
+16-bit write:     26.189 MB/s  -  24.976 MiB/s  -  409.20 fps
+16-bit  read:      3.350 MB/s  -   3.194 MiB/s  -   52.34 fps
+16-bit  move:     26.189 MB/s  -  24.976 MiB/s  -  409.20 fps
+
+32-bit write:     43.826 MB/s  -  41.796 MiB/s  -  684.78 fps
+32-bit  read:      4.324 MB/s  -   4.124 MiB/s  -   67.57 fps
+32-bit  move:     43.826 MB/s  -  41.796 MiB/s  -  684.78 fps
+
+-------------------------------- 
+video adapter type: VESA, version 2.0 
+VESA OEM string:    S3 Incorporated. 86C775/86C785 
+VESA adapter name:  Trio64V2/DX/GX 
+-----------------------------------------------------------------------
+results for VGA mode-x 0x13 (320x200x8bpp), 4096 KiB trasfer: 
+
+8-bit  write:     10.178 MB/s  -   9.706 MiB/s  -  159.02 fps
+8-bit   read:      1.688 MB/s  -   1.609 MiB/s  -   26.37 fps
+8-bit   move:     10.201 MB/s  -   9.729 MiB/s  -  159.39 fps
+
+16-bit write:     21.913 MB/s  -  20.897 MiB/s  -  342.38 fps
+16-bit  read:      2.169 MB/s  -   2.068 MiB/s  -   33.89 fps
+16-bit  move:     22.025 MB/s  -  21.005 MiB/s  -  344.14 fps
+
+32-bit write:     22.025 MB/s  -  21.005 MiB/s  -  344.14 fps
+32-bit  read:      2.520 MB/s  -   2.403 MiB/s  -   39.38 fps
+32-bit  move:     22.025 MB/s  -  21.005 MiB/s  -  344.14 fps
+
+-------------------------------- 
+video adapter type: VESA, version 2.0 
+VESA OEM string:    S3 Incorporated. 86C775/86C785 
+VESA adapter name:  Trio64V2/DX/GX 
+-----------------------------------------------------------------------
+results for VESA mode 0x101 (640x480x8bpp), 4096 KiB trasfer: 
+
+8-bit  write:     10.178 MB/s  -   9.706 MiB/s  -   33.13 fps
+8-bit   read:      1.740 MB/s  -   1.659 MiB/s  -    5.66 fps
+8-bit   move:     10.178 MB/s  -   9.706 MiB/s  -   33.13 fps
+
+16-bit write:     22.967 MB/s  -  21.903 MiB/s  -   74.76 fps
+16-bit  read:      2.219 MB/s  -   2.116 MiB/s  -    7.22 fps
+16-bit  move:     22.967 MB/s  -  21.903 MiB/s  -   74.76 fps
+
+32-bit write:     23.091 MB/s  -  22.021 MiB/s  -   75.17 fps
+32-bit  read:      2.577 MB/s  -   2.458 MiB/s  -    8.39 fps
+32-bit  move:     23.091 MB/s  -  22.021 MiB/s  -   75.17 fps
+
+-------------------------------- 
+video adapter type: VESA, version 2.0 
+VESA OEM string:    S3 Incorporated. 86C775/86C785 
+VESA adapter name:  Trio64V2/DX/GX 
+-----------------------------------------------------------------------
+results for VESA mode 0x101 (640x480x8bpp) LFB, 4096 KiB trasfer: 
+
+8-bit  write:     10.178 MB/s  -   9.706 MiB/s  -   33.13 fps
+8-bit   read:      1.735 MB/s  -   1.654 MiB/s  -    5.65 fps
+8-bit   move:     10.153 MB/s  -   9.683 MiB/s  -   33.05 fps
+
+16-bit write:     26.189 MB/s  -  24.976 MiB/s  -   85.25 fps
+16-bit  read:      3.468 MB/s  -   3.308 MiB/s  -   11.29 fps
+16-bit  move:     26.189 MB/s  -  24.976 MiB/s  -   85.25 fps
+
+32-bit write:     85.899 MB/s  -  81.920 MiB/s  -  279.62 fps
+32-bit  read:      6.938 MB/s  -   6.616 MiB/s  -   22.58 fps
+32-bit  move:     71.583 MB/s  -  68.267 MiB/s  -  233.02 fps
+
