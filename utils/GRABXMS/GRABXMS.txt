@@ -1,0 +1,23 @@
+    grabxms -- XMS memory management tool -- wbcbz7 24.05.2022
+
+    usage: xmsgrab [memsize] [-a] [-l] [-u] [-i] [-file=] [-h=xxx,xxx,...]
+           [memsize] - amount of FREE memory left after run in kbytes
+                      (e.g 1 for 1kb, 64 for 64kb, 16M for 16mb)
+           -u        - un-allocate previously allocated memory
+           -a        - allocate [memsize] kbytes only, don't write to handles list
+           -h        - deallocate handle(s) xxx (comma-separated, dec/hex) 
+           -i        - list info about each allocated XMS handle
+           -l        - ignore XMS 3.00 extensions
+           -file     - set handles file (default is XMSGRAB.HND)
+    examples:
+        xmsgrab.exe 4M
+            - leave 4 MB free extended memory, write handles to XMSGRAB.HND
+        xmsgrab.exe -u -l
+            - restore default free memory amount, ignore XMS 3.00 extensions
+        xmsgrab.exe -u 16M -file=handles.lst
+            - restore default free memory amount, then reduce to 16 MB and write
+              handles to HANDLES.LST
+        xmsgrab.exe -a 3072
+            - allocate 3072 KB of memory
+        xmsgrab.exe -h=22403,0x3250
+            - deallocate handles 22403 and 0x3250 (if possible)
